@@ -1,18 +1,23 @@
-# This is a sample Python script.
+# -*- coding: utf-8 -*-
+"""
+@Time ： 2022/5/11 16:35
+@Auth ： ghm
+@File ：run.py.py
+@IDE ：PyCharm
+@Motto：ABC(Always Be Coding)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+"""
+import pytest
+import os
+import sys
+sys.path.append('./')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# pytest.main(["-v","-m","demo","--reruns","1","--alluredir=../OutPuts/allure-results"])
+# os.system(r"allure generate --clean ../OutPuts/allure-results -o ../allure-report ")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
-from poco import proxy
+pytest.main(["-v","-m","buy","--alluredir=OutPuts/allure-results"])
+os.system("allure generate  OutPuts/allure-results -o allure-report --clean")

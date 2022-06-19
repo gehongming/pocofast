@@ -1,0 +1,12 @@
+/allure-report/*
+utils/demo.py
+.pytest_cache
+Pipfile
+
+__pycache__/
+db.sqlite3
+.idea/
+/outputs/logs/*
+/outputs/screenshots/*
+/allure-report/*
+.pytest_cache
