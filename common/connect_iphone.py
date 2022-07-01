@@ -13,9 +13,12 @@ from common.basepage import *
 import time
 
 
+
+
 class Open_iphone(object):
 
     def __init__(self):
+        auto_setup(__file__,devices=["android:///182QGFZL2244A"])
         self.poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
 
     def start_app(self):

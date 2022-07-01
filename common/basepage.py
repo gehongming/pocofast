@@ -118,10 +118,10 @@ class BasePage:
         # 操作
         try:
             ele.swipe(direction=direction, focus=focus, duration=duration)  # 点击操作
-            logging.info("在 {} 元素 {} 上输入文本值：{} 成功！".format(img_desc, loc, value))
+            logging.info("在 {} 元素 {} 上滑动成功！".format(img_desc, loc))
         except:
             # 日志
-            logging.exception("在 {} 元素 {} 上输入文本值：{} 失败！".format(img_desc, loc, value))
+            logging.exception("在 {} 元素 {} 上滑动失败！".format(img_desc, loc))
             # 截图
             self.save_img(img_desc)
             raise  # 抛出异常，让用例识别到异常将用例状态为失败。
@@ -167,6 +167,7 @@ class BasePage:
             logging.info("获取 {} 元素 {} 的文本值为:{}".format(img_desc, loc, text))
             return text
 
+    # 截图
     def save_img(self, img_description):
         """
         :param img_description: 图片的描述 。格式为 页面名称_功能名

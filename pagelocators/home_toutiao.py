@@ -8,12 +8,12 @@
 
 """
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-poco = AndroidUiautomationPoco()
+poco = AndroidUiautomationPoco(use_airtest_input=True)
 
 
 class HomeLocators:
 
     tuijian = poco(name='推荐')
-    tuijianpage = poco(name="com.ss.android.article.news:id/dbq")
+    tuijianpage = poco(name="androidx.recyclerview.widget.RecyclerView")
 
 
