@@ -19,8 +19,8 @@ logging = poco_log.HandleLogger.create_logger()
 
 class BasePage:
 
-    # def __init__(self, poco):  # 传入连接的手机  from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-    #     self.poco = poco
+    def __init__(self, poco):  # 传入连接的手机  from poco.drivers.android.uiautomation import AndroidUiautomationPoco
+        self.poco = poco
 
     # 等待一定时间内判断元素存在
     def ele_exists(self, loc, img_desc='默认判断', timeout=0.5):
@@ -34,6 +34,7 @@ class BasePage:
         """
         start = datetime.datetime.now()  # 用datetime模块获取时间
         try:
+            loc.refresh()  # 节点刷新 放置节点过期
             loc.wait(timeout=timeout).exists()
         except:
             # 日志
