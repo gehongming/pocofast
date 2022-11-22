@@ -18,6 +18,6 @@ class HomeLocators:
 
     def page(self):
 
-        tuijian = self.poco(name='推荐')
-        tuijianpage = self.poco(name="androidx.recyclerview.widget.RecyclerView")
+        tuijian = self.poco(name='推荐').refresh()
+        tuijianpage = self.poco(name="androidx.recyclerview.widget.RecyclerView").refresh()
         return tuijian, tuijianpage
